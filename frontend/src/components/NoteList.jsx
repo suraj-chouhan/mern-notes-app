@@ -13,11 +13,12 @@ function NoteList({editingNote , setEditingNote}){
 		try{
 		
 			const res = await axios.get(`${API_URL}/notes`);
-			setNotes(res.data.data);
+			setNotes(Array.isArray(res.data) ? res.data : []);
 			setLoading(false);
 		}catch(error)
 		{
 			console.log(error);
+			setNotes([]);
 		}
 		
 	};
