@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import NoteForm from "./components/NoteForm";
-import NoteList from "./components/NoteList";
+
 
 function App(){
    const [editingNote , setEditingNote] = useState(null);
