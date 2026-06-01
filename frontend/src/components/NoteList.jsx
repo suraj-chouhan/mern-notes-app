@@ -9,7 +9,7 @@ function NoteList({editingNote , setEditingNote}){
 	const [search, setSearch] = useState("");
 
 	const fetchNotes = async () => {
-
+console.log(API_URL);
    try {
 
       const res = await axios.get(`${API_URL}/notes`);
