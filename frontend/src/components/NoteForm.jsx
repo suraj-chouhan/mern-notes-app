@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import API_URL from "../api/api";
 
 function NoteForm({editingNote , setEditingNote} ){
 	const [title, setTitle] = useState("");
@@ -30,7 +31,7 @@ function NoteForm({editingNote , setEditingNote} ){
 			if(editingNote){
 				setError("");
 				setLoading(true);
-				await axios.put(`http://localhost:3000/api/note/${editingNote._id}`,{
+				await axios.put(`${API_URL}/note/${editingNote._id}`,{
 					title,
 					content
 				})
@@ -43,7 +44,7 @@ function NoteForm({editingNote , setEditingNote} ){
 			}else{
 				setError("");
 				setLoading(true);
-				await axios.post("http://localhost:3000/api/note", {
+				await axios.post(API_URL+"/note", {
 					title,
 					content
 				});

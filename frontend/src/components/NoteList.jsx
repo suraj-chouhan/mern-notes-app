@@ -1,6 +1,7 @@
 import React,{ useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import API_URL from "../api/api";
 
 function NoteList({editingNote , setEditingNote}){
 	const [notes, setNotes ] = useState([]);
@@ -11,7 +12,7 @@ function NoteList({editingNote , setEditingNote}){
 	{	
 		try{
 		
-			const res = await axios.get("http://localhost:3000/api/notes");
+			const res = await axios.get(API_URL+"/api/notes");
 			setNotes(res.data.data);
 			setLoading(false);
 		}catch(error)
@@ -29,7 +30,7 @@ function NoteList({editingNote , setEditingNote}){
 		if (!confirmDelete) return;
 		try{
 			
-			await axios.delete("http://localhost:3000/api/note/"+id);
+			await axios.delete(API_URL+"/note/"+id);
 			toast.success("Note Deleted");
 			fetchNotes();
 			
