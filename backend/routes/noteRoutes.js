@@ -2,7 +2,7 @@ const express = require("express");
 
 const router = express.Router();
 
-const { getNotes, addNote, deleteNote, updateNote } = require("../controllers/notecontroller");
+const { getNotes, addNote, deleteNote, updateNote } = require("../controllers/noteController");
 
 router.get("/notes" , getNotes);
 
