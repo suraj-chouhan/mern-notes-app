@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
@@ -11,6 +12,8 @@ const noteRoutes = require("./routes/noteRoutes");
 
 app.use("/api",noteRoutes);
 
-app.listen(3000,()=>{
-	console.log("Server running on 3000 port");
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+   console.log(`Server running on ${PORT}`);
 });
