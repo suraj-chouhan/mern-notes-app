@@ -12,7 +12,7 @@ function NoteList({editingNote , setEditingNote}){
 	{	
 		try{
 		
-			const res = await axios.get(API_URL+"/notes");
+			const res = await axios.get(`${API_URL}/notes`);
 			setNotes(res.data.data);
 			setLoading(false);
 		}catch(error)
