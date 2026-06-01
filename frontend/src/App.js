@@ -15,7 +15,7 @@ function App(){
 
             <NoteForm editingNote = {editingNote} setEditingNote = {setEditingNote} />
 
-            <NoteList editingNote = {editingNote} setEditingNote = {setEditingNote} />
+            
 
          </div>
 
