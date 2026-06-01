@@ -8,20 +8,25 @@ function NoteList({editingNote , setEditingNote}){
 	const [loading, setLoading] = useState(true);
 	const [search, setSearch] = useState("");
 
-	const fetchNotes = async ()=>
-	{	
-		try{
-		
-			const res = await axios.get(`${API_URL}/notes`);
-			setNotes(Array.isArray(res.data) ? res.data : []);
-			setLoading(false);
-		}catch(error)
-		{
-			console.log(error);
-			setNotes([]);
-		}
-		
-	};
+	const fetchNotes = async () => {
+
+   try {
+
+      const res = await axios.get(`${API_URL}/notes`);
+
+      console.log(res.data);
+
+      setNotes(res.data);
+
+   } catch(error) {
+
+      console.log(error);
+
+   } finally {
+
+      setLoading(false);
+   }
+};
 	
 	const handleDelete = async(id) =>{
 		const confirmDelete = window.confirm(
