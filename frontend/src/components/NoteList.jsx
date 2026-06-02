@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import API_URL from "../api/api";
 
-function NoteList({editingNote , setEditingNote}){
+function NoteList({editingNote , setEditingNote }){
 	const [notes, setNotes ] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [search, setSearch] = useState("");
