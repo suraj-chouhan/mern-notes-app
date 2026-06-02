@@ -4,7 +4,7 @@ import NoteList from "./components/NoteList";
 
 function App(){
    const [editingNote , setEditingNote] = useState(null);
-   const [refresh, setRefresh] = useState(false);
+   const [refreshN, setRefreshN] = useState(false);
 	return(
 		<div className="min-h-screen bg-gray-100 p-6">
 
@@ -14,9 +14,9 @@ function App(){
                MERN Notes App
             </h1>
 
-            <NoteForm editingNote = {editingNote} setEditingNote = {setEditingNote} />
+            <NoteForm setRefreshN={setRefreshN} editingNote = {editingNote} setEditingNote = {setEditingNote} />
 
-            <NoteList editingNote = {editingNote} setEditingNote = {setEditingNote} />
+            <NoteList refreshN={refreshN} editingNote = {editingNote} setEditingNote = {setEditingNote} />
 
          </div>
 
