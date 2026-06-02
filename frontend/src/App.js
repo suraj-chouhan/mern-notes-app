@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import NoteForm from "./components/NoteForm";
 import NoteList from "./components/NoteList";
 
 function App(){
    const [editingNote , setEditingNote] = useState(null);
+   const [refresh, setRefresh] = useState(false);
 	return(
 		<div className="min-h-screen bg-gray-100 p-6">
 
