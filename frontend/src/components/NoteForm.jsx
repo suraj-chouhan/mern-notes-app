@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import API_URL from "../api/api";
 
-function NoteForm({editingNote , setEditingNote, setRefresh } ){
+function NoteForm({editingNote , setEditingNote} ){
 	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
 	const [loading, setLoading] = useState(false);
@@ -40,7 +40,6 @@ function NoteForm({editingNote , setEditingNote, setRefresh } ){
 				setTitle("");
 				setContent("");
 				setLoading(false);
-				setRefresh(prev => !prev);
 
 			}else{
 				setError("");
@@ -53,7 +52,6 @@ function NoteForm({editingNote , setEditingNote, setRefresh } ){
 				setTitle("");
 				setContent("");
 				setLoading(false);
-				setRefresh(prev => !prev);
 			}
 			
 		}catch(error){

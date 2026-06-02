@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import API_URL from "../api/api";
 
-function NoteList({editingNote , setEditingNote, refresh}){
+function NoteList({editingNote , setEditingNote}){
 	const [notes, setNotes ] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [search, setSearch] = useState("");
@@ -36,7 +36,7 @@ function NoteList({editingNote , setEditingNote, refresh}){
 			
 			await axios.delete(API_URL+"/note/"+id);
 			toast.success("Note Deleted");
-			fetchNotes();  
+			fetchNotes();
 			
 		}catch(error){
 			console.log(error);
@@ -55,7 +55,7 @@ function NoteList({editingNote , setEditingNote, refresh}){
 
 	useEffect(()=>{
 		fetchNotes();
-	},[refresh]);
+	},[]);
 
 	if(loading)
 	{
