@@ -36,7 +36,7 @@ function NoteList({editingNote , setEditingNote, refresh}){
 			
 			await axios.delete(API_URL+"/note/"+id);
 			toast.success("Note Deleted");
-			fetchNotes();
+			fetchNotes();  
 			
 		}catch(error){
 			console.log(error);
